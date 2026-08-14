@@ -2,6 +2,7 @@ import "./globals.css";
 import { App } from "./App";
 import { ThemeModeScript } from "flowbite-react";
 import { ThemeInit } from "../.flowbite-react/init";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
   metadataBase: new URL(process.env.METADATA_BASE_URL || "https://example.com"),
@@ -39,6 +40,7 @@ export default function RootLayout({ children }) {
         <ThemeModeScript />
       </head>
       <App>{children}</App>
+      <Analytics />
     </html>
   );
 }
